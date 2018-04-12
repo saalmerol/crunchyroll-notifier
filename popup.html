@@ -1,0 +1,50 @@
+<head>
+	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap-vue.css"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/vue-loading.min.css"/>
+</head>
+<body>
+  <div id="app">
+    <div style="width: 600px">
+
+			<b-navbar type="dark" style="background-color: #F78C24;">
+			  <b-navbar-brand href="https://miyata.moe" target="_blank">Crunchyroll Notifier</b-navbar-brand>
+		    <!-- Right aligned nav items -->
+		    <b-navbar-nav class="ml-auto">
+		    	<b-button size="sm" class="my-2 my-sm-0" variant="dark" type="submit" href="options.html" target="_blank">Settings</b-button>
+		    </b-navbar-nav>
+			</b-navbar>
+
+			<b-carousel id="carousel1"
+	                style="text-shadow: 1px 1px 2px #333;"
+	                controls
+	                indicators
+	                background="#ababab"
+	                :interval="2000"
+	                v-model="slide"
+	                @sliding-start="onSlideStart"
+	                @sliding-end="onSlideEnd"
+	    >
+	      <!-- Text slides with image -->
+				<b-carousel-slide v-for="anime in animes" :caption="anime.name"
+	                        :text="anime.time + ' | Episode ' + anime.episode"
+	                        :img-src="anime.thumbnail"
+	      ></b-carousel-slide>
+	    </b-carousel>
+			<b-navbar toggleable="md" style="background-color: white;">
+				<center>
+					<a :href="animes[slide].url" target="_blank"><img style="position:absolute;left: 0;right: 0;margin: -20px auto;" src="https://www.crunchyroll.com/i/beta/about/crunchyroll_logo_tagline.png" height="100px"></img></a>
+				</center>
+			</b-navbar>
+		</div>
+  </div>
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/polyfill.min.js"></script>
+	<script src="assets/js/bootstrap-vue.js"></script>
+	<script src="assets/js/axios.min.js"></script>
+	<script src="assets/js/moment.js"></script>
+	<script src="assets/js/vue-spinner.js"></script>
+	<script src="assets/js/vue-loading.min.js"></script>
+	<script src="assets/js/xml2json.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
