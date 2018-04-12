@@ -2,7 +2,7 @@
  "manifest_version": 2,
  "name": "Crunchyroll Notifier",
  "description": "Latest Crunchyroll simulcasts in a click of a button.",
- "version": "1.5.0",
+ "version": "1.5.1",
  "author": "Son Roy Almerol",
 "browser_action": {
    "default_title": "Crunchyroll Notifier",

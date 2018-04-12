@@ -1,3 +1,9 @@
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.storage.sync.set({
+    numberPopup: 5
+  });
+});
+
 $(document).ready(function(){
   var socket = io.connect('https://anime.miyata.moe');
   /*socket.on('connect', function(data) {
